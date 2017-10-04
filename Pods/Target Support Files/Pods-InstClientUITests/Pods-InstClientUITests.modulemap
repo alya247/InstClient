@@ -1,0 +1,6 @@
+framework module Pods_InstClientUITests {
+  umbrella header "Pods-InstClientUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
