@@ -13,6 +13,7 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
   
@@ -21,22 +22,159 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
+    /// Resource file `Chivo-Black.ttf`.
+    static let chivoBlackTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Chivo-Black", pathExtension: "ttf")
+    /// Resource file `Chivo-BlackItalic.ttf`.
+    static let chivoBlackItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Chivo-BlackItalic", pathExtension: "ttf")
+    /// Resource file `Chivo-Italic.ttf`.
+    static let chivoItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Chivo-Italic", pathExtension: "ttf")
+    /// Resource file `Chivo-Regular.ttf`.
+    static let chivoRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Chivo-Regular", pathExtension: "ttf")
+    /// Resource file `Montserrat-Bold.ttf`.
+    static let montserratBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Bold", pathExtension: "ttf")
+    /// Resource file `Montserrat-Regular.ttf`.
+    static let montserratRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Regular", pathExtension: "ttf")
+    
+    /// `bundle.url(forResource: "Chivo-Black", withExtension: "ttf")`
+    static func chivoBlackTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chivoBlackTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Chivo-BlackItalic", withExtension: "ttf")`
+    static func chivoBlackItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chivoBlackItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Chivo-Italic", withExtension: "ttf")`
+    static func chivoItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chivoItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Chivo-Regular", withExtension: "ttf")`
+    static func chivoRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.chivoRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Montserrat-Bold", withExtension: "ttf")`
+    static func montserratBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Montserrat-Regular", withExtension: "ttf")`
+    static func montserratRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
+  /// This `R.font` struct is generated, and contains static references to 6 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `Chivo-BlackItalic`.
+    static let chivoBlackItalic = Rswift.FontResource(fontName: "Chivo-BlackItalic")
+    /// Font `Chivo-Black`.
+    static let chivoBlack = Rswift.FontResource(fontName: "Chivo-Black")
+    /// Font `Chivo-Italic`.
+    static let chivoItalic = Rswift.FontResource(fontName: "Chivo-Italic")
+    /// Font `Chivo-Regular`.
+    static let chivoRegular = Rswift.FontResource(fontName: "Chivo-Regular")
+    /// Font `Montserrat-Bold`.
+    static let montserratBold = Rswift.FontResource(fontName: "Montserrat-Bold")
+    /// Font `Montserrat-Regular`.
+    static let montserratRegular = Rswift.FontResource(fontName: "Montserrat-Regular")
+    
+    /// `UIFont(name: "Chivo-Black", size: ...)`
+    static func chivoBlack(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: chivoBlack, size: size)
+    }
+    
+    /// `UIFont(name: "Chivo-BlackItalic", size: ...)`
+    static func chivoBlackItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: chivoBlackItalic, size: size)
+    }
+    
+    /// `UIFont(name: "Chivo-Italic", size: ...)`
+    static func chivoItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: chivoItalic, size: size)
+    }
+    
+    /// `UIFont(name: "Chivo-Regular", size: ...)`
+    static func chivoRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: chivoRegular, size: size)
+    }
+    
+    /// `UIFont(name: "Montserrat-Bold", size: ...)`
+    static func montserratBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratBold, size: size)
+    }
+    
+    /// `UIFont(name: "Montserrat-Regular", size: ...)`
+    static func montserratRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratRegular, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.chivoBlackItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Chivo-BlackItalic' could not be loaded, is 'Chivo-BlackItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.chivoRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Chivo-Regular' could not be loaded, is 'Chivo-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Bold' could not be loaded, is 'Montserrat-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Regular' could not be loaded, is 'Montserrat-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.chivoBlack(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Chivo-Black' could not be loaded, is 'Chivo-Black.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.chivoItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Chivo-Italic' could not be loaded, is 'Chivo-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
+    /// Image `navBarMenu`.
+    static let navBarMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "navBarMenu")
+    /// Image `navBarSettings`.
+    static let navBarSettings = Rswift.ImageResource(bundle: R.hostingBundle, name: "navBarSettings")
+    /// Image `profileComment`.
+    static let profileComment = Rswift.ImageResource(bundle: R.hostingBundle, name: "profileComment")
+    /// Image `profileLike`.
+    static let profileLike = Rswift.ImageResource(bundle: R.hostingBundle, name: "profileLike")
+    /// Image `profileMore`.
+    static let profileMore = Rswift.ImageResource(bundle: R.hostingBundle, name: "profileMore")
+    
+    /// `UIImage(named: "navBarMenu", bundle: ..., traitCollection: ...)`
+    static func navBarMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navBarMenu, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "navBarSettings", bundle: ..., traitCollection: ...)`
+    static func navBarSettings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navBarSettings, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "profileComment", bundle: ..., traitCollection: ...)`
+    static func profileComment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profileComment, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "profileLike", bundle: ..., traitCollection: ...)`
+    static func profileLike(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profileLike, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "profileMore", bundle: ..., traitCollection: ...)`
+    static func profileMore(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profileMore, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `ProfileNavigationCell`.
     static let profileNavigationCell = _R.nib._ProfileNavigationCell()
@@ -44,8 +182,6 @@ struct R: Rswift.Validatable {
     static let profilePhotoGridCell = _R.nib._ProfilePhotoGridCell()
     /// Nib `ProfilePhotoListCell`.
     static let profilePhotoListCell = _R.nib._ProfilePhotoListCell()
-    /// Nib `ProfileUserInfoCell`.
-    static let profileUserInfoCell = _R.nib._ProfileUserInfoCell()
     /// Nib `ProfileUserPhotoCell`.
     static let profileUserPhotoCell = _R.nib._ProfileUserPhotoCell()
     
@@ -64,11 +200,6 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.profilePhotoListCell)
     }
     
-    /// `UINib(name: "ProfileUserInfoCell", in: bundle)`
-    static func profileUserInfoCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.profileUserInfoCell)
-    }
-    
     /// `UINib(name: "ProfileUserPhotoCell", in: bundle)`
     static func profileUserPhotoCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.profileUserPhotoCell)
@@ -77,7 +208,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `profileNavigationCell`.
     static let profileNavigationCell: Rswift.ReuseIdentifier<ProfileNavigationCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "profileNavigationCell")
@@ -85,8 +216,6 @@ struct R: Rswift.Validatable {
     static let profilePhotoGridCell: Rswift.ReuseIdentifier<ProfilePhotoGridCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "profilePhotoGridCell")
     /// Reuse identifier `profilePhotoListCell`.
     static let profilePhotoListCell: Rswift.ReuseIdentifier<ProfilePhotoListCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "profilePhotoListCell")
-    /// Reuse identifier `profileUserInfoCell`.
-    static let profileUserInfoCell: Rswift.ReuseIdentifier<ProfileUserInfoCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "profileUserInfoCell")
     /// Reuse identifier `profileUserPhotoCell`.
     static let profileUserPhotoCell: Rswift.ReuseIdentifier<ProfileUserPhotoCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "profileUserPhotoCell")
     
@@ -98,35 +227,28 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+    /// Storyboard `Login`.
+    static let login = _R.storyboard.login()
     /// Storyboard `Profile`.
     static let profile = _R.storyboard.profile()
-    /// Storyboard `TabBar`.
-    static let tabBar = _R.storyboard.tabBar()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
     
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    /// `UIStoryboard(name: "Login", bundle: ...)`
+    static func login(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.login)
     }
     
     /// `UIStoryboard(name: "Profile", bundle: ...)`
     static func profile(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.profile)
-    }
-    
-    /// `UIStoryboard(name: "TabBar", bundle: ...)`
-    static func tabBar(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.tabBar)
     }
     
     fileprivate init() {}
@@ -153,9 +275,14 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+    try nib.validate()
   }
   
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _ProfilePhotoListCell.validate()
+    }
+    
     struct _ProfileNavigationCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = ProfileNavigationCollectionViewCell
       
@@ -184,7 +311,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _ProfilePhotoListCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+    struct _ProfilePhotoListCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = ProfilePhotoListCollectionViewCell
       
       let bundle = R.hostingBundle
@@ -195,18 +322,10 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfilePhotoListCollectionViewCell
       }
       
-      fileprivate init() {}
-    }
-    
-    struct _ProfileUserInfoCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = ProfileUserInfoCollectionViewCell
-      
-      let bundle = R.hostingBundle
-      let identifier = "profileUserInfoCell"
-      let name = "ProfileUserInfoCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProfileUserInfoCollectionViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileUserInfoCollectionViewCell
+      static func validate() throws {
+        if UIKit.UIImage(named: "profileMore", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'profileMore' is used in nib 'ProfilePhotoListCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "profileComment", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'profileComment' is used in nib 'ProfilePhotoListCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "profileLike", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'profileLike' is used in nib 'ProfilePhotoListCell', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
@@ -231,6 +350,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try login.validate()
       try profile.validate()
     }
     
@@ -243,11 +363,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = ViewController
+    struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LoginViewController
       
       let bundle = R.hostingBundle
-      let name = "Main"
+      let loginVC = StoryboardViewControllerResource<LoginViewController>(identifier: "loginVC")
+      let name = "Login"
+      
+      func loginVC(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.login().loginVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginVC' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
+      }
       
       fileprivate init() {}
     }
@@ -264,17 +393,9 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "navBarSettings") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navBarSettings' is used in storyboard 'Profile', but couldn't be loaded.") }
         if _R.storyboard.profile().profileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'profileVC' could not be loaded from storyboard 'Profile' as 'ProfileViewController'.") }
       }
-      
-      fileprivate init() {}
-    }
-    
-    struct tabBar: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UIKit.UITabBarController
-      
-      let bundle = R.hostingBundle
-      let name = "TabBar"
       
       fileprivate init() {}
     }

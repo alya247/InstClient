@@ -10,7 +10,38 @@ import UIKit
 
 class ProfilePhotoGridCollectionViewCell: UICollectionViewCell {
     
-    static func size() -> CGSize {
-        return CGSize(width: .screenWidth, height: 300)
+    //MARK: - IBOutlets
+        
+    @IBOutlet var photoImageView: UIImageView!
+    
+    //MARK: - LifeCycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        photoImageView.image = nil
     }
 }
+
+//MARK: - Public Methods
+
+extension ProfilePhotoGridCollectionViewCell {
+    
+    func fill(withMedia media: Media) {
+        photoImageView.sd_setImage(with: URL(string: media.imageThumbnail?.url ?? ""))
+    }
+    
+    static func size() -> CGSize {
+        let side: CGFloat = .screenWidth / 3 - 3
+        return CGSize(width: side, height: side)
+    }
+}
+
+
+
+
+

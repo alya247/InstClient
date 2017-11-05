@@ -10,35 +10,16 @@ import UIKit
 
 struct ProfileUserInfoCellProvider: ProfileCellProvider {
     
-    enum Row: Int {
+    func cell(forItemAt indexPath: IndexPath, in collectionView: UICollectionView, with userModel: User, media: [Media]) -> UICollectionViewCell {
         
-        case photo
-        case info
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.profileUserPhotoCell.identifier, for: indexPath) as! ProfileUserPhotoCollectionViewCell
+        cell.fill(withModel: userModel)
         
-        static let count = 2
+        return cell
     }
     
-    func cell(forItemAt indexPath: IndexPath, in collectionView: UICollectionView, with model: String) -> UICollectionViewCell {
+    func size(forItemAt indexPath: IndexPath, width: CGFloat, media: [Media]) -> CGSize {
         
-        let row = Row(rawValue: indexPath.row)!
-        
-        switch row {
-        case .photo:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.profileUserPhotoCell.identifier, for: indexPath) as! ProfileUserPhotoCollectionViewCell
-            return cell
-        case .info:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.profileUserInfoCell.identifier, for: indexPath) as! ProfileUserInfoCollectionViewCell
-            return cell
-        }
-    }
-    
-    func size(forItemAt indexPath: IndexPath, width: CGFloat) -> CGSize {
-        
-        let row = Row(rawValue: indexPath.row)!
-        
-        switch row {
-        case .photo: return ProfileUserPhotoCollectionViewCell.size()
-        case .info: return ProfileUserInfoCollectionViewCell.size()
-        }
+        return ProfileUserPhotoCollectionViewCell.size()
     }
 }

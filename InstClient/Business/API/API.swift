@@ -15,7 +15,7 @@ class API {
         case error
     }
     
-    static var apiURl: String {
+    static var apiURL: String {
         return "https://api.instagram.com"
     }
     
@@ -30,6 +30,4 @@ class API {
     static var redirectURI: String {
         return "http://www.example.com/"
     }
-    
-    
 }

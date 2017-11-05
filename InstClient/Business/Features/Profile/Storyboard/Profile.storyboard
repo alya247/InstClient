@@ -18,18 +18,30 @@
                         <viewControllerLayoutGuide type="bottom" id="rQG-Tx-AUJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gv2-nL-gZ2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-i0-Wp9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ5-re-61R" customClass="BackgroundMain" customModule="InstClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IUo-G2-hDe">
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRH-px-rfu" customClass="PlaceholderView" customModule="InstClient" customModuleProvider="target">
+                                <rect key="frame" x="55" y="46" width="290" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-i0-Wp9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="IUo-G2-hDe">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="KWE-Ze-IV3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IEZ-Rn-GQ9">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -48,14 +60,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZQ5-re-61R" secondAttribute="trailing" id="39f-k9-LZS"/>
+                            <constraint firstItem="ZQ5-re-61R" firstAttribute="top" secondItem="gv2-nL-gZ2" secondAttribute="top" id="3Ko-t7-Kat"/>
                             <constraint firstItem="A0B-i0-Wp9" firstAttribute="top" secondItem="gv2-nL-gZ2" secondAttribute="top" id="76a-FL-LSI"/>
+                            <constraint firstItem="rQG-Tx-AUJ" firstAttribute="top" secondItem="DRH-px-rfu" secondAttribute="bottom" id="AV3-cR-eyZ"/>
+                            <constraint firstItem="DRH-px-rfu" firstAttribute="leading" secondItem="gv2-nL-gZ2" secondAttribute="leading" constant="55" id="Lc4-Ut-pCd"/>
                             <constraint firstItem="A0B-i0-Wp9" firstAttribute="leading" secondItem="gv2-nL-gZ2" secondAttribute="leading" id="Lqy-Yq-aGX"/>
+                            <constraint firstAttribute="trailing" secondItem="DRH-px-rfu" secondAttribute="trailing" constant="30" id="QAU-ML-AOE"/>
                             <constraint firstAttribute="trailing" secondItem="A0B-i0-Wp9" secondAttribute="trailing" id="SIZ-2a-neE"/>
+                            <constraint firstItem="ZQ5-re-61R" firstAttribute="leading" secondItem="gv2-nL-gZ2" secondAttribute="leading" id="ZCY-f5-JqE"/>
+                            <constraint firstItem="rQG-Tx-AUJ" firstAttribute="top" secondItem="ZQ5-re-61R" secondAttribute="bottom" id="icA-3J-aCb"/>
                             <constraint firstItem="rQG-Tx-AUJ" firstAttribute="top" secondItem="A0B-i0-Wp9" secondAttribute="bottom" id="v6b-Pm-dAp"/>
+                            <constraint firstItem="DRH-px-rfu" firstAttribute="top" secondItem="E2G-ki-ZAt" secondAttribute="bottom" constant="46" id="xII-cC-bSK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7VX-4N-9WZ"/>
+                    <navigationItem key="navigationItem" id="7VX-4N-9WZ">
+                        <barButtonItem key="rightBarButtonItem" image="navBarSettings" id="rQ5-53-iyT">
+                            <connections>
+                                <action selector="openSettings:" destination="0IO-BN-HUz" id="Ahk-x7-0on"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="KWE-Ze-IV3" id="3hK-iv-2Ly"/>
+                        <outlet property="backgroundView" destination="ZQ5-re-61R" id="iuD-Id-KbL"/>
+                        <outlet property="placeholderView" destination="DRH-px-rfu" id="Cyw-aD-5jK"/>
                         <outlet property="profileCollectionView" destination="A0B-i0-Wp9" id="vlT-SS-RJN"/>
                     </connections>
                 </viewController>
@@ -82,4 +112,7 @@
             <point key="canvasLocation" x="112.8" y="170.46476761619192"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="navBarSettings" width="21" height="18"/>
+    </resources>
 </document>

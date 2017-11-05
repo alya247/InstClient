@@ -10,14 +10,14 @@ import UIKit
 
 struct ProfileNavigationProvider: ProfileCellProvider {
     
-    func cell(forItemAt indexPath: IndexPath, in collectionView: UICollectionView, with model: String) -> UICollectionViewCell {
+    func cell(forItemAt indexPath: IndexPath, in collectionView: UICollectionView, with userModel: User, media: [Media]) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.profileNavigationCell.identifier, for: indexPath) as! ProfileNavigationCollectionViewCell
         return cell
     }
     
-    func size(forItemAt indexPath: IndexPath, width: CGFloat) -> CGSize {
+    func size(forItemAt indexPath: IndexPath, width: CGFloat, media: [Media]) -> CGSize {
         
-        return ProfileUserInfoCollectionViewCell.size()
+        return ProfileNavigationCollectionViewCell.size()
     }
 }

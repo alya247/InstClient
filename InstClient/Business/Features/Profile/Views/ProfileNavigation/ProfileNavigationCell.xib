@@ -12,29 +12,74 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileNavigationCell" id="wze-5C-w8W" customClass="ProfileNavigationCollectionViewCell" customModule="InstClient" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileNavigationCell" id="ukm-s3-JHE" customClass="ProfileNavigationCollectionViewCell" customModule="InstClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="61"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                <rect key="frame" x="0.0" y="0.0" width="416" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-ZJ-VZB">
-                        <rect key="frame" x="27" y="10" width="97" height="53"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Grid"/>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-Qe-Q0s">
+                        <rect key="frame" x="0.0" y="5.5" width="183" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="54G-3E-d0r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <state key="normal" title="Grid">
+                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.58830722038497418" green="0.58830722038497418" blue="0.58830722038497418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="openGridPresentation:" destination="ukm-s3-JHE" eventType="touchUpInside" id="6GI-Vk-mBI"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5V-HP-WLs">
-                        <rect key="frame" x="249" y="17" width="83" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="List"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHQ-77-Ik2">
+                        <rect key="frame" x="233" y="5" width="183" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Ivz-cO-FJq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <state key="normal" title="List">
+                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.58830722040000005" green="0.58830722040000005" blue="0.58830722040000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="openListPresentation:" destination="ukm-s3-JHE" eventType="touchUpInside" id="28H-O1-JDE"/>
+                        </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-Bz-AC1">
+                        <rect key="frame" x="183" y="0.0" width="50" height="61"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="98R-2D-xNz"/>
+                            <constraint firstAttribute="height" constant="61" id="UhF-mO-zd5"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <viewLayoutGuide key="safeArea" id="KOq-hC-eon"/>
-            <size key="customSize" width="375" height="73"/>
-            <point key="canvasLocation" x="-119.5" y="15.5"/>
+            <constraints>
+                <constraint firstItem="6oR-Bz-AC1" firstAttribute="centerX" secondItem="ukm-s3-JHE" secondAttribute="centerX" id="1DK-7w-rt2"/>
+                <constraint firstItem="6oR-Bz-AC1" firstAttribute="centerY" secondItem="ukm-s3-JHE" secondAttribute="centerY" id="6Ms-Vd-tv5"/>
+                <constraint firstItem="6oR-Bz-AC1" firstAttribute="leading" secondItem="Xb1-Qe-Q0s" secondAttribute="trailing" id="6sB-k8-lMV"/>
+                <constraint firstItem="EHQ-77-Ik2" firstAttribute="centerY" secondItem="ukm-s3-JHE" secondAttribute="centerY" id="7JG-8E-b7h"/>
+                <constraint firstItem="6oR-Bz-AC1" firstAttribute="centerX" secondItem="ukm-s3-JHE" secondAttribute="centerX" id="NXx-Lb-fRV"/>
+                <constraint firstItem="EHQ-77-Ik2" firstAttribute="leading" secondItem="6oR-Bz-AC1" secondAttribute="trailing" id="NY6-nA-fmF"/>
+                <constraint firstItem="Xb1-Qe-Q0s" firstAttribute="centerY" secondItem="ukm-s3-JHE" secondAttribute="centerY" id="fJg-dU-9Qk"/>
+                <constraint firstItem="Xb1-Qe-Q0s" firstAttribute="leading" secondItem="ukm-s3-JHE" secondAttribute="leading" id="nJw-yR-Gne"/>
+                <constraint firstAttribute="trailing" secondItem="EHQ-77-Ik2" secondAttribute="trailing" id="zdA-T0-aVv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="tqn-Pp-ax8"/>
+            <size key="customSize" width="416" height="61"/>
+            <connections>
+                <outlet property="gridButton" destination="Xb1-Qe-Q0s" id="B5T-Ci-Sqv"/>
+                <outlet property="listButton" destination="EHQ-77-Ik2" id="T6G-Cq-nOf"/>
+            </connections>
+            <point key="canvasLocation" x="-111" y="167"/>
         </collectionViewCell>
     </objects>
 </document>

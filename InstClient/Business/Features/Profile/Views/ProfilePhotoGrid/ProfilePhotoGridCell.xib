@@ -32,6 +32,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="Gbi-v4-8Ef"/>
             <size key="customSize" width="147" height="115"/>
+            <connections>
+                <outlet property="photoImageView" destination="5F5-2d-7sh" id="6oV-b2-PLN"/>
+            </connections>
             <point key="canvasLocation" x="-92" y="37"/>
         </collectionViewCell>
     </objects>
